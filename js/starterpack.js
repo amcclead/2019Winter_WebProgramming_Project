@@ -18,17 +18,16 @@ const starterPack= {
        startingPrice:10, 
        currentBid:10, 
        bidderName:"Jack"}
-        ]
-        }
+      ]
+}
 
 if (typeof(Storage) !== "undefined") {
-  if (localStorage.bidStarterPack){
-
+  if (!localStorage.bidDB){
+        //If there isn't a bid pack object in localStorage, this adds one
+      stringStarterPack = JSON.stringify(starterPack);
+        localStorage.setItem('bidDB', stringStarterPack);
   }
 
-  else {
-
-  }
 } else {
-  // Sorry! No Web Storage support..
+  console.log('Sorry! No Web Storage support..');
 }
