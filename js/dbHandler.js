@@ -17,6 +17,17 @@ function addNewItem(obj) {
   saveDataBase(db);
 }
 
+function updateBid(bidid) {
+  let db = callDataBase();
+  for (i = 0; i<db.length; i++) {
+    if (db.items[i].bidid === bidid){
+      let probid = document.querySelector("#"+bidid).value;
+      if (probid > db.items[i].currentBid){
+        db.items[i].currentBid = probid
+      }
+    }
+  }
+}
 
 let db = callDataBase();
 document.querySelector(".itemcount").innerHTML = db.items.length;

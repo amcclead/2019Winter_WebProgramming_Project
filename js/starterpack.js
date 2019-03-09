@@ -5,19 +5,26 @@ const starterPack= {
        "Des":"Long lost ancient artifact.",
        "startingPrice":1,
        "currentBid":0,
-       "bidderName":"Unknown"},
-        {"createdBy":"Luke",
+       "bidderName":"Unknown",
+       "bidid":0
+     },
+        {
+       "createdBy":"Luke",
        "title":"Lightsaber",
        "Des":"Need some money. Being a Jedi doesn't pay much.",
        "startingPrice":1000000,
        "currentBid":5,
-       "bidderName":"Han"},
+       "bidderName":"Han",
+       "bidid":1
+     },
         {"createdBy":"Stranger",
        "title":"Magic Beans",
        "Des":"Need a new cow",
        "startingPrice":10,
-       "currentBid":10, 
-       "bidderName":"Jack"}
+       "currentBid":10,
+       "bidderName":"Jack",
+       "bidid":2
+     }
       ]
 }
 
