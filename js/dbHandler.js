@@ -21,5 +21,4 @@ function addNewItem(obj) {
 let db = callDataBase();
 let bidTemplate = document.querySelector("#bid-template").innerHTML;
 let compiledTemplate= Handlebars.compile(bidTemplate);
-document.querySelector("#bid-list-container").innerHTML = compiledTemplate(db.items[0]);
-console.log("hello world")
+document.querySelector("#bid-list-container").innerHTML = compiledTemplate(db);
