@@ -6,7 +6,9 @@ const starterPack= {
        "startingPrice":1,
        "currentBid":0,
        "bidderName":"Unknown",
-       "bidid":0
+       "helper1":"0",
+       "helpererror":"0error",
+       "fluff":""
      },
         {
        "createdBy":"Luke",
@@ -15,15 +17,20 @@ const starterPack= {
        "startingPrice":1000000,
        "currentBid":5,
        "bidderName":"Han",
-       "bidid":1
+       "helper1":"1",
+       "helpererror":"1error",
+       "fluff":""
      },
-        {"createdBy":"Stranger",
+        {
+        "createdBy":"Stranger",
        "title":"Magic Beans",
        "Des":"Need a new cow",
        "startingPrice":10,
        "currentBid":10,
        "bidderName":"Jack",
-       "bidid":2
+       "helper1":"2",
+       "helpererror":"2error",
+       "fluff":""
      }
       ]
 }
