@@ -61,8 +61,9 @@
 					           <small class="text-muted">{{des}}</small>
 					       </div>
 					       <span class="text-muted">Asking Price: ${{startingPrice}}<br>Current bid: ${{currentBid}} <br>posted by {{bidderName}}</span>
-					       <value id="{{bidid}}" type="text" name="NewBid"></value>
-					       <value type="button" onclick="updateBid({{bidid}})" value="Bid!"></value>
+					       <value id={{{helper1}}} type="text" name="NewBid"></value>
+					       <value type="button" onclick="updateBid({{{helper1}}})" value="Bid!"></value>
+                 <span id = {{{helpererror}}} class = "text-danger invisible">Your bid is too low</span>
 					   </li>
 					   {{/each}}
 					</script>
