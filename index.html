@@ -1,162 +1,155 @@
 <!DOCTYPE html>
 
 <html lang="en">
-<head>
-	<meta charset="utf-8">
-	<meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
-	<meta content="" name="description">
-	<meta content="" name="author">
-	<script src="js/starterpack.js">
-	</script>
 
-	<title>Bidding System</title><!-- Bootstrap core CSS -->
-	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"><!-- Custom styles for this template -->
-	<link href="CSS/form-validation.css" rel="stylesheet">
-</head>
+	<head>
+		<meta charset="utf-8">
+		<meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+		<script src="js/starterpack.js"></script>
 
-<body class="bg-light">
-	<div class="container">
-		<div class="py-5 text-center">
-			<img alt="" class="d-block mx-auto mb-4" height="72" src="https://getbootstrap.com/docs/4.0/assets/brand/bootstrap-solid.svg" width="72">
+		<title>Bidding System</title>
+		<!-- Bootstrap core CSS -->
+		<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"><!-- Custom styles for this template -->
+		<link href="CSS/form-validation.css" rel="stylesheet">
+	</head>
 
-			<h2>A&amp;M Auction</h2>
+	<body class="bg-light">
+		<div class="container">
+			<div class="py-5 text-center">
+				<img alt="" class="d-block mx-auto mb-4" height="72" src="https://getbootstrap.com/docs/4.0/assets/brand/bootstrap-solid.svg" width="72">
 
-
-			<div class="row">
-				<div class="col-md-8 order-md-2 mb-4">
-					<h4 class="d-flex justify-content-between align-items-center mb-3"><span class="text-muted">Your Auction Items</span> <span class="badge badge-secondary badge-pill itemcount"></span></h4>
+				<h2>A&amp;M Auction</h2>
 
 
-					<!--<div class="col-md-8 order-md-2 mb-4">
+				<div class="row">
+					<div class="col-md-8 order-md-2 mb-4">
+						<h4 class="d-flex justify-content-between align-items-center mb-3"><span class="text-muted">Your Auction Items</span> <span class="badge badge-secondary badge-pill itemcount"></span></h4>
+
+
+						<!--<div class="col-md-8 order-md-2 mb-4">
 						<h4 class="d-flex justify-content-between align-items-center mb-3"><span class="text-muted">Add items for auction below. You can include a description and set the starting bid price.</span></h4>
-					</div>-->
-				</div>
-				<script id="bid-template" type="text/x-handlebars-template">
-				        {{#each items}}
-				    <li class="list-group-item d-flex justify-content-between lh-condensed">
-				        <div>
-				            <h6 class="my-0">{{title}} <br>posted by {{createdBy}}</h6>
-				            <small class="text-muted">{{Des}}</small>
-				    <div>
-				            <input id={{{helper1}}}finder type='text' name='NewBid'></value>
-				            <input type="button" onclick="updateBid({{{helper1}}})" value="Bid!"></value>
-				      <span id={{{helpererror}}} class="text-danger invisible">Your bid is too low</span>
-				    </div>
-				        </div>
-				        <span class="text-muted">Asking Price: ${{startingPrice}}<br>Current bid: ${{currentBid}} <br>posted by {{bidderName}}</span>
+						</div>-->
+					</div>
 
-				    </li>
-				    {{/each}}
-				</script>
-
-				<div class="list-group mb-3" id="bid-list-container" style="margin-left: 2em">
 					<script id="bid-template" type="text/x-handlebars-template">
-					                      {{#each items}}
-					                  <li class="list-group-item d-flex justify-content-between lh-condensed">
-					                      <div>
-					                          <h6 class="my-0">{{title}} <br>posted by {{createdBy}}</h6>
-					                          <small class="text-muted">{{des}}</small>
-					                      </div>
-					                      <span class="text-muted">Asking Price: ${{startingPrice}}<br>Current bid: ${{currentBid}} <br>posted by {{bidderName}}</span>
-					                      <value id={{{helper1}}} type="text" name="NewBid"></value>
-					                      <value type="button" onclick="updateBid({{{helper1}}})" value="Bid!"></value>
-					            <span id = {{{helpererror}}} class = "text-danger invisible">Your bid is too low</span>
-					                  </li>
-					                  {{/each}}
+						{{#each items}}
+						<li class="list-group-item d-flex justify-content-between lh-condensed">
+						<div>
+
+							<h6 class="my-0">{{title}} <br>posted by {{createdBy}}</h6>
+							<small class="text-muted">{{Des}}</small>
+							<div>
+							<input id={{{helper1}}}finder type='text' name='NewBid'></value>
+							<input type="button" onclick="updateBid({{{helper1}}})" value="Bid!"></value>
+							<span id={{{helpererror}}} class="text-danger invisible">Your bid is too low</span>
+							</div>
+						</div>
+						<span class="text-muted">Asking Price: ${{startingPrice}}<br>Current bid: ${{currentBid}} <br>posted by {{bidderName}}</span>
+						</li>
+						{{/each}}
 					</script>
+
+					<div class="list-group mb-3" id="bid-list-container" style="margin-left: 2em">
+						<script id="bid-template" type="text/x-handlebars-template">
+							{{#each items}}
+							<li class="list-group-item d-flex justify-content-between lh-condensed">
+							<div>
+								<h6 class="my-0">{{title}} <br>posted by {{createdBy}}</h6>
+								<small class="text-muted">{{des}}</small>
+							</div>
+							<span class="text-muted">Asking Price: ${{startingPrice}}<br>Current bid: ${{currentBid}} <br>posted by {{bidderName}}</span>
+							<value id={{{helper1}}} type="text" name="NewBid"></value>
+							<value type="button" onclick="updateBid({{{helper1}}})" value="Bid!"></value>
+							<span id = {{{helpererror}}} class = "text-danger invisible">Your bid is too low</span>
+							</li>
+							{{/each}}
+						</script>
+					</div>
+
+
+					<div class="col-md-6 order-md-2 mb-4">
+						<h4 class="d-flex justify-content-between align-items-center mb-3"><span class="text-muted">Add Bid Items</span>
+						</h4>
+					</div>
+
+					<form>
+						<div class="form-group">
+							<label for="createdBy">Your Name</label>
+							<input type="text" class="form-control" id="createdBy" placeholder="Your Name">
+						</div>
+						<div class="form-group">
+							<label for="title">Item</label>
+							<input type="text" class="form-control" id="title" placeholder="Item Name">
+						</div>
+						<div class="form-group">
+							<label for="Des">Item Description</label>
+							<textarea class="form-control" id="Des" rows="3" placeholder="Describe the Item"></textarea>
+						</div>
+						<div class="form-group">
+							<label for="startingPrice">Asking Price</label>
+							<input type="text" class="form-control" id="startingPrice" placeholder="$0.00">
+						</div>
+						<button type="submit" class="btn btn-primary">Submit</button>
+
+					</form>
+
 				</div>
 
 
-				<div class="col-md-6 order-md-2 mb-4">
-					<h4 class="d-flex justify-content-between align-items-center mb-3"><span class="text-muted">Add Bid Items</span>
-					</h4>
-				</div>
-				
-				<form>
-				  <div class="form-group">
-					<label for="createdBy">Your Name</label>
-					<input type="text" class="form-control" id="createdBy" placeholder="Your Name">
-				  </div>
-				  <div class="form-group">
-					<label for="title">Item</label>
-					<input type="text" class="form-control" id="title" placeholder="Item Name">
-				  </div>
-				  <div class="form-group">
-					<label for="Des">Item Description</label>
-					<textarea class="form-control" id="Des" rows="3" placeholder="Describe the Item" ></textarea>
-				  </div>
-				  <div class="form-group">
-					<label for="startingPrice">Asking Price</label>
-					<input type="text" class="form-control" id="startingPrice" placeholder="$0.00">
-				  </div>
-				    <button type="submit" class="btn btn-primary">Submit</button>
-	
-				</form>				
-				
-				</div>
+				<footer class="my-5 pt-5 text-muted text-center text-small">
+					<p class="mb-1">© 2018-2019 A&amp;M LLC</p>
 
 
-			<footer class="my-5 pt-5 text-muted text-center text-small">
-				<p class="mb-1">© 2018-2019 A&amp;M LLC</p>
-
-
-				<ul class="list-inline">
-					<li class="list-inline-item">
+					<ul class="list-inline">
+						<li class="list-inline-item">
 						<a href="#">Privacy</a>
-					</li>
+						</li>
 
 
-					<li class="list-inline-item">
+						<li class="list-inline-item">
 						<a href="#">Terms</a>
-					</li>
+						</li>
 
 
-					<li class="list-inline-item">
+						<li class="list-inline-item">
 						<a href="#">Support</a>
-					</li>
-				</ul>
-			</footer>
+						</li>
+					</ul>
+				</footer>
+			</div>
 		</div>
-	</div>
-	<!-- Bootstrap core JavaScript
-    ================================================== -->
-	<!-- Placed at the end of the document so the pages load faster -->
-	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js">
-	</script> 
-	<script src="js/handlebars-v4.1.0.js">
-	</script> 
-	<script src="js/dbHandler.js">
-	</script> 
-	<script>
-	      window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')
-	</script> 
-	<script src="js/popper.min.js">
-	</script> 
-	<script src="js/bootstrap.min.js">
-	</script> 
-	<script src="js/holder.min.js">
-	</script> 
-	<script>
-	      // Example starter JavaScript for disabling form submissions if there are invalid fields
-	      (function() {
-	        'use strict';
+		<!-- Bootstrap core JavaScript
+		================================================== -->
+		<!-- Placed at the end of the document so the pages load faster -->
+		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+		<script src="js/handlebars-v4.1.0.js"></script>
+		<script src="js/dbHandler.js"></script>
+		<script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+		<script src="js/popper.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/holder.min.js"></script>
+		<script>
+		// Example starter JavaScript for disabling form submissions if there are invalid fields
+			(function() {
+				'use strict';
 
-	        window.addEventListener('load', function() {
-	          // Fetch all the forms we want to apply custom Bootstrap validation styles to
-	          var forms = document.getElementsByClassName('needs-validation');
+				window.addEventListener('load', function() {
+					// Fetch all the forms we want to apply custom Bootstrap validation styles to
+					var forms = document.getElementsByClassName('needs-validation');
 
-	          // Loop over them and prevent submission
-	          var validation = Array.prototype.filter.call(forms, function(form) {
-	            form.addEventListener('submit', function(event) {
-	              if (form.checkValidity() === false) {
-	                event.preventDefault();
-	                event.stopPropagation();
-	              }
-	              form.classList.add('was-validated');
-	            }, false);
-	          });
-	        }, false);
-	      })();
-	</script>
-</body>
+					// Loop over them and prevent submission
+					var validation = Array.prototype.filter.call(forms, function(form) {
+					form.addEventListener('submit', function(event) {
+					if (form.checkValidity() === false) {
+						event.preventDefault();
+						event.stopPropagation();
+						}
+					form.classList.add('was-validated');
+					}, false);
+					});
+				}, false);
+			})();
+		</script>
+	</body>
+
 </html>
