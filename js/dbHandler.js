@@ -19,27 +19,26 @@ function addNewItem(obj) {
 }
 
 function updateBid(bidid) {
+  let probid = document.getElementById(bidid).value;
+  var errorCode = document.getElementById(bidid+"error");
 
-  if (document.getElementById(bidid+"finder").value){
-    console.log("In first if");
+  if (probid){
+    //Checks if a value has been entered
     var db = callDataBase();
-    for (i = 0; i<db.items.length; i++) {
-      console.log("In first for round: "+i);
-      if (db.items[i].helper1 == bidid){
-        console.log("In second if round: "+i)
-        let probid = document.getElementById(bidid+"finder").value;
-        if (probid > db.items[i].currentBid){
-          db.items[i].currentBid = probid;
-          db.items[i].bidderName = "Current User";
-          if (!document.getElementById(bidid+"error").classList.contains("invisible")) {
-            document.getElementById(bidid+"error").classList.toggle("invisible")
-          }
-          saveDataBase(db);
-        } else {document.getElementById(bidid+"error").classList.toggle("invisible")}
-      }
-    }
-  } else {document.getElementById(bidid+"error").classList.toggle("invisible")}
+    let currentBid = db.items[bidid].currentBid;
+
+    if (probid > currentBid) {
+      //Checks if value is greater than current bid
+      db.items[bidid].currentBid = probid;
+      db.items[bidid].bidderName = "Current User";
+
+
+      saveDataBase(db);
+    } else {errorCode.classList.toggle("invisible");}
+  } else {errorCode.classList.toggle("invisible");}
 }
+
+
 
 let db = callDataBase();
 document.querySelector(".itemcount").innerHTML = db.items.length;
