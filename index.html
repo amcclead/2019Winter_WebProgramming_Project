@@ -37,7 +37,7 @@
 
 							</div>
 							<span class="text-muted">Asking Price: ${{startingPrice}}<br>Current bid: ${{currentBid}} <br>posted by {{bidderName}}</span>
-							<span id = {{{helpererror}}} class = "text-danger invisible">Your bid is too low</span>
+							<span id={{helper1}}error class="text-danger invisible">Your bid is too low</span>
 							</li>
 							{{/each}}
 						</script>
@@ -64,7 +64,7 @@
 							<label for="startingPrice">Asking Price</label>
 							<input type="text" class="form-control" id="startingPrice" placeholder="$0.00">
 						</div>
-						<button type="submit" class="btn btn-primary">Submit</button>
+						<button type="submit" class="btn btn-primary" onclick="addNewBid()">Submit</button>
 
 					</form>
 					</div>

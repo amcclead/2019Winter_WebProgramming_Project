@@ -6,9 +6,7 @@ const starterPack= {
        "startingPrice":1,
        "currentBid":0,
        "bidderName":"Unknown",
-       "helper1":"0",
-       "helpererror":"0error",
-       "fluff":""
+       "helper1":"0"
      },
         {
        "createdBy":"Luke",
@@ -17,9 +15,7 @@ const starterPack= {
        "startingPrice":1000000,
        "currentBid":5,
        "bidderName":"Han",
-       "helper1":"1",
-       "helpererror":"1error",
-       "fluff":""
+       "helper1":"1"
      },
         {
         "createdBy":"Stranger",
@@ -28,9 +24,7 @@ const starterPack= {
        "startingPrice":10,
        "currentBid":10,
        "bidderName":"Jack",
-       "helper1":"2",
-       "helpererror":"2error",
-       "fluff":""
+       "helper1":"2"
      }
       ]
 }
