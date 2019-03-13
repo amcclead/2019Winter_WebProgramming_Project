@@ -44,15 +44,16 @@ function addNewBid() {
   let title = document.getElementById("title").value;
   let des = document.getElementById("Des").value;
   let startingPrice = document.getElementById("startingPrice").value;
-  let newBid = {"createdBy":createdBy,
-   "title":title,
-   "Des":des,
-   "startingPrice":startingPrice,
-   "currentBid":0,
-   "bidderName":"None",
-   "helper1":9999
- }
- addNewItem(newBid);
+  let newBid = {
+    "createdBy":createdBy,
+    "title":title,
+    "Des":des,
+    "startingPrice":startingPrice,
+    "currentBid":0,
+    "bidderName":"None",
+    "helper1":9999
+   }
+   addNewItem(newBid);
 }
 
 let db = callDataBase();
